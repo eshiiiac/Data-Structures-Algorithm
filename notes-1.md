@@ -76,3 +76,122 @@ void display(){
 	}
 ```
 
+## QUEUE
+
+#### ENQUEUEING ELEMENTS TO THE QUEUE
+
+```
+#include <stdio.h>
+#define MAX 5
+
+int queue[MAX], fromt=0, rear= -1;
+//function to enqueue(insert) an element
+
+void enqueue(int value){
+    if( rear == MAX -1){
+        printf("Queue Overflow! cannot enqueue %d\n", value);
+        return ;
+    }
+    rear+=1;
+    queue[rear]=value;
+    printf("%d enqueued to queue\n", value);
+}
+
+int main(){
+    enqueue(69);
+    enqueue(420);
+    enqueue(34);
+    enqueue(35);
+    enqueue(42);
+    enqueue(0);
+}
+
+
+```
+
+#### DEQUEUEING ELEMENTS TO THE QUEUE
+
+```
+int dequeue(){
+    if(front > rear){
+        printf("Queue Underflow! Cannot dequeue\n");
+        return -1;
+    }
+    int removed = queue[front];
+    front+=1;
+    if (front > rear){
+        front =0;
+        rear = -1;
+    }
+    return removed;
+}
+
+
+
+int main(){
+    int removed = dequeue();
+    printf("dequeud element %d\n", removed);
+}
+```
+
+#### main code w displaying
+```
+#include <stdio.h>
+#define MAX 5
+
+int queue[MAX], front=0, rear= -1;
+//function to enqueue(insert) an element
+
+void enqueue(int value){
+    if( rear == MAX -1){
+        printf("Queue Overflow! cannot enqueue %d\n", value);
+        return ;
+    }
+    rear+=1;
+    queue[rear]=value;
+    printf("%d enqueued to queue\n", value);
+}
+
+int dequeue(){
+    if(front > rear){
+        printf("Queue Underflow! Cannot dequeue\n");
+        return -1;
+    }
+    int removed = queue[front];
+    front+=1;
+    if (front > rear){
+        front =0;
+        rear = -1;
+    }
+    return removed;
+}
+
+void display(){
+    if(front > rear){
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("Queue elements: ");
+    for(int i = front; i<= rear; i++){
+        printf("%d ", queue[i]);
+    }
+    printf("\n");
+}
+
+int main(){
+    enqueue(69);
+    enqueue(420);
+    enqueue(34);
+    enqueue(35);
+    enqueue(42);
+    enqueue(0);
+    display();
+    int removed = dequeue();
+    printf("dequeud element %d\n", removed);
+    display();
+    
+}
+
+
+```
+
