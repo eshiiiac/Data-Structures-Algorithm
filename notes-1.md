@@ -17,7 +17,7 @@
 			printf("Stack Overflow! cannot push %d\n", value);
 			return;
 		}
-	top = top-1;
+	top = top+1;
 	stack[top]=value;
 	printf("%d pushed into the stack\n", value);
 	}
