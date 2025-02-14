@@ -22,7 +22,7 @@
             head = newNode;
             return;
         }
-        int tem = head;
+        int temp = head;
         while(next[temp] !=-1){
             
         }
