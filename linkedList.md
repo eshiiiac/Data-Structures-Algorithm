@@ -35,8 +35,8 @@
             return;
         }
         int temp = head;
-        printf("%d", data[temo]);
-        while(temp !- -1){
+        printf("%d", data[temp]);
+        while(temp != -1){
             printf("%d -> ", data[temp]);
             temp = next[temp];
         }
